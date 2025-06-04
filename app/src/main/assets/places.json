@@ -1,0 +1,189 @@
+[
+    {
+        "id": 1,
+        "nome": "Duomo",
+        "descrizione": "Il duomo di Benevento, che ha per nome ufficiale quello di cattedrale metropolitana di Santa Maria de Episcopio, è il principale luogo di culto di Benevento, sede vescovile dell'omonima arcidiocesi metropolitana.\n\nEsistente sin dalle origini della chiesa beneventana, fu quasi totalmente distrutta dai bombardamenti degli Alleati nella Seconda guerra mondiale, e successivamente ricostruita.\n\nLa cattedrale, dedicata a Sancta Maria de Episcopio, si affaccia nella piazza omonima; alle sue spalle si trova il palazzo arcivescovile.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.131640519077756,
+        "longitudine": 14.774383782835937,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 2,
+        "nome": "Arco di Traiano",
+        "descrizione": "L'arco di Traiano di Benevento è un arco celebrativo dedicato all'imperatore Traiano in occasione dell'apertura della via Traiana, una variante della via Appia che accorciava il cammino tra Roma e Brindisi.\n\nIl monumento, giuntoci sostanzialmente integro, compresi i numerosi rilievi scultorei che ne decorano le superfici, e tra gli archi trionfali romani meglio conservati al mondo.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13254295530281,
+        "longitudine": 14.779123382416302,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 3,
+        "nome": "Chiesa di Santa Sofia",
+        "descrizione": "La chiesa di Santa Sofia è un antico edificio religioso di Benevento; sorge nella piazza omonima, inizialmente intitolata a Carlo Maurizio Talleyrand. Si tratta di una delle più importanti testimonianze dell'architettura longobarda nella Langobardia Minor, anche se nel corso dei secoli è stata più volte rimaneggiata, fino ad acquisire il suo aspetto moderno. Fa parte del sito seriale \"Longobardi in Italia: i luoghi del potere\", comprendente sette luoghi densi di testimonianze architettoniche, pittoriche e scultoree dell'arte longobarda, iscritto alla Lista dei patrimoni dell'umanità dell'UNESCO nel giugno 2011. La chiesa è di proprietà del FEC.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.130605542386604,
+        "longitudine": 14.781217576438577,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 4,
+        "nome": "Teatro Romano",
+        "descrizione": "Il teatro romano di Benevento fu eretto nelle vicinanze del cardo maximus, nel settore sud-occidentale della città, presumibilmente sotto l’imperatore Traiano, oggi circondato dal medievale Rione Triggio. Fu inaugurato soltanto fra il 125 ed il 128 d.C. dall'imperatore Adriano, al quale per l’occasione viene destinata un’epigrafe dedicatoria visibile nei pressi del frontescena.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13040405465745,
+        "longitudine": 14.771618937069881,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 5,
+        "nome": "Hortus Conclusus Paladino",
+        "descrizione": "L'Hortus Conclusus è un'installazione dell'artista Domenico Paladino, esponente della Transavanguardia Italiana, realizzata nel 1992 insieme all'architetto Roberto Serino, all'architetto Pasquale Palmieri e al lighting designer Filippo Cannata in uno degli orti del Convento di San Domenico a Benevento. L'Hortus si apre in fondo al Vico Noce, accessibile dal Corso Garibaldi.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.12973170384612,
+        "longitudine": 14.779664842222854,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 6,
+        "nome": "Villa Comunale",
+        "descrizione": "Questo parco situato nella zona più elevata del centro storico, di fronte alla Rocca dei Rettori, fu realizzato su progetto di Alfredo Dehnhardt, direttore dell’Orto Botanico di Napoli. L’inaugurazione avvenne intorno al 1880. Il suo aspetto è quello di un giardino romantico, in stile inglese, con vasche e laghetto e con percorsi dalle linee armoniose che non ubbidiscono a nessun rigoroso ordine geometrico. I viali, infatti, si snodano con andamento spontaneo per assecondare la conformazione dei luoghi. Lungo i bordi di prati e aiuole sono collocati i busti marmorei di illustri personaggi sanniti. La vegetazione è caratterizzata da alberi secolari, pini, cedri e ippocastani.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.12777733217614,
+        "longitudine": 14.783871579563964,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 7,
+        "nome": "Janua Museo delle Streghe",
+        "descrizione": "Janua o Museo delle Streghe è un museo di Benevento, dedicato alla figura delle streghe e delle janare. Il museo è ospitato all'interno di Palazzo Paolo V.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.131399165594054,
+        "longitudine": 14.776765847773996,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 8,
+        "nome": "Store Ufficiale Strega",
+        "descrizione": "Un grande classico del bere italiano, da oltre 150 anni il Liquore Strega si degusta piacevolmente liscio o con ghiaccio e per un bere più ricercato in long drinks e cocktails. Un perfetto equilibrio di erbe e di spezie sapientemente miscelate per un prodotto totalmente naturale.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.14126755599783,
+        "longitudine": 14.76947387401378,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 9,
+        "nome": "Basilica Madonna delle Grazie",
+        "descrizione": "La basilica di Maria Santissima delle Grazie è una chiesa monumentale ottocentesca di Benevento, alla quale è annesso un convento francescano, che è stato ricostruito dopo la seconda guerra mondiale. La zona ove è presente la basilica misura un'altitudine di 126 m s.l.m..\nLa Madonna delle Grazie è venerata quale patrona della città ed è festeggiata il 2 luglio.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.134853561752195,
+        "longitudine": 14.767520743881954,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 10,
+        "nome": "Ponte Leproso",
+        "descrizione": "Il ponte Leproso è un ponte di origine romana che attraversa il fiume Sabato ai margini dell'abitato di Benevento. Tramite questo ponte accedeva alla città il tratto di Via Appia antica proveniente da Capua.\nIl ponte è incluso nel sito Patrimonio dell'Umanità UNESCO Via Appia. Regina Viarum.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.131535716852234,
+        "longitudine": 14.765482789934158,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 11,
+        "nome": "Rocca dei Rettori",
+        "descrizione": "Rocca dei Rettori è il nome comunemente dato al castello di Benevento. È sede della provincia di Benevento e ospita la sezione storica del museo del Sannio, con il materiale pertinente alla storia, all'arte e alle tradizioni popolari della città e della provincia.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.12901464082885,
+        "longitudine": 14.782218278267777,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 12,
+        "nome": "Arco del Sacramento",
+        "descrizione": "L'Arco del Sacramento, di costruzione romana, si trova a Benevento. Sormonta Via Carlo Torre, all'angolo del Palazzo Arcivescovile.\nLa costruzione dell'arco è databile tra la fine del I e l'inizio del II secolo. La facciata si presenta priva del rivestimento marmoreo, di cui rimangono alcuni lacerti, e delle statue originariamente alloggiate nelle nicchie ai lati delle fronti.\nL'arco dava adito all'area del Foro, dalla parte meridionale della città, nei pressi del Teatro romano.\nLa riqualificazione dell'area è stata attuata grazie alla misura 5.1 del PIT ed è costata quasi 5 milioni di euro. I lavori sono stati progettati e diretti dal Comune di Benevento con l'intervento sinergico della Soprintendenza archeologica di Salerno Avellino Benevento e la Seconda Università degli studi di Napoli. Il restauro dell'arco e delle strutture limitrofe hanno riportato alla luce un complesso termale presente nella zona. Il 9 luglio 2009 è stato inaugurato il percorso archeologico urbano.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.1290207272297,
+        "longitudine": 14.782237383510246,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 13,
+        "nome": "Bue Apis",
+        "descrizione": "Il bue Apis è una statua di provenienza egizia situata a Benevento, all'inizio del viale San Lorenzo che porta alla basilica della Madonna delle Grazie. Popolarmente è chiamata il porchettello o, in dialetto, 'a ufara 'e Santu Lavrienzo, \"la bufala di San Lorenzo\". Potrebbe essere stata parte dell'arredo del tempio di Iside cittadino, ma la questione è aperta.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13371605357278,
+        "longitudine": 14.770192644457385,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 14,
+        "nome": "Obelisco Egizio",
+        "descrizione": "Gli obelischi egizi di Benevento sono due monumenti realizzati sotto l'imperatore romano Domiziano per essere eretti, fra l'88 e l'89 d.C., ai due lati dell'ingresso del nuovo tempio di Iside della colonia di Beneventum. Le loro iscrizioni in geroglifici sono l'attestazione più esplicita dell'esistenza di tale tempio che sia giunta ai giorni nostri.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13158944648485,
+        "longitudine": 14.777151726194413,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 15,
+        "nome": "Port'Arsa'",
+        "descrizione": "Port'Arsa, probabilmente sorta in epoca tardoromana, è l'ingresso al Triggio. Era a questa porta che conduceva la via Appia Antica, passando per il ponte Leproso. Le altre porte sono andate distrutte.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13125085637503,
+        "longitudine": 14.768460879584243,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 16,
+        "nome": "Fontana delle Catene",
+        "descrizione": "La fontana delle Catene è una monumentale fontana barocca di Benevento, collocata in piazza Orsini. Questo nome le è attribuito popolarmente, perché circondata da catene.\n\nLa fontana fu eretta per volontà dell'arcivescovo Vincenzo Maria Orsini, il 5 settembre 1705, al centro della piazza che per cinque secoli aveva ospitato la Basilica di San Bartolomeo, crollata nel terremoto del 1688, da lui ricostruita e irrimediabilmente distrutta dal sisma del 1702. Fu realizzata dall'architetto Nicola Colle De Vita, probabilmente su disegno dell'architetto romano Carlo Buratti. Nel 1778, la cittadinanza vi volle allocare in cima la statua benedicente di papa Benedetto XIII.\n\nI bombardamenti del settembre 1943 danneggiarono gravemente sia la fontana che la statua. Fu quindi eseguito un lungo ed accurato restauro dal maestro romano Giovanni Sparla per conto della Soprintendenza ai Beni Architettonici; ma è stato possibile recuperare solo in parte il manufatto originale. La statua è stata ricollocata a dimora il 21 giugno 1992.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13109348184389,
+        "longitudine": 14.774934464763195,
+        "smallImg": "",
+        "bigImg": ""
+    },
+    {
+        "id": 17,
+        "nome": "Casa del GOAT",
+        "descrizione": "Non c'è un granché da dire, il GOAT abita qui, è casa sua. Di tutti i monumenti presenti in questa app, questo è di sicuro quello con l'importanza maggiore.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.134643,
+        "longitudine": 14.754840,
+        "smallImg": "",
+        "bigImg": ""
+    }
+]

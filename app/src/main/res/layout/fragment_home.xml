@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visitati: 0 su 0"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            app:trackThickness="8dp"
+            app:trackCornerRadius="4dp"
+            app:indicatorColor="@color/light_green"
+            app:trackColor="@color/light_gray"
+            style="@style/Widget.Material3.LinearProgressIndicator"
+            android:progress="0"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/std_fr_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non hai ancora visitato:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/empty_home_unvisit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hai visto tutto di Benevento!"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:textColor="@color/light_green"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recy_unvis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/std_fr_home_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hai già visitato:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/empty_home_visit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non hai ancora visitato nulla"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:textColor="@color/red"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recy_visit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

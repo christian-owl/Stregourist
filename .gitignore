@@ -1,0 +1,64 @@
+# ==== SISTEMI OPERATIVI ====
+.DS_Store               # macOS
+Thumbs.db               # Windows
+ehthumbs.db
+desktop.ini
+
+# ==== IDE ====
+.idea/
+*.iml
+
+# ==== GRADLE ====
+.gradle/
+build/
+**/build/
+local.properties        # Contiene path SDK
+secret.properties
+
+# ==== ANDROID BUILD ====
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+
+# ==== FILE DI CONFIGURAZIONE GOOGLE ====
+# Protegge le chiavi API
+google-services.json
+app/google-services.json
+app/src/*/google-services.json
+
+# ==== FIREBASE / CRASHLYTICS ====
+crashlytics.properties
+fabric.properties
+
+# ==== CHIAVI E CREDENZIALI ====
+*.jks
+*.keystore
+key.properties
+
+# ==== DATABASE & LOG ====
+*.db
+*.log
+*.lock
+
+# ==== TEMP / CACHE / ALTRO ====
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ==== GIT IGNORE FILES DI SISTEMA ====
+# Evita problemi con file system specifici
+*.orig
+*.rej
+
+# ==== EXCLUDE PERSONAL FILES ====
+.env
+.env.*
+*.pem
+*.crt
+*.key
+
+# ==== GRADLE WRAPPER (incluso) ====
+!gradle-wrapper.jar
