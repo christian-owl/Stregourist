@@ -52,18 +52,25 @@ public class PlaceCardAdapter  extends RecyclerView.Adapter<PlaceCardAdapter.Pla
 
     public static class PlaceViewHolder extends RecyclerView.ViewHolder {
         private final TextView name;
-        private final TextView distance;
+        private final TextView description;
         private final AppCompatImageButton visitedButton;
 
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.place_card_name);
-            distance = itemView.findViewById(R.id.place_card_distance);
+            description = itemView.findViewById(R.id.place_card_description);
             visitedButton = itemView.findViewById(R.id.visited_button);
         }
         public void bind(Place place, PlaceViewHolder holder){
             name.setText(place.getNome());
-            distance.setText(place.getDescrizione());
+            String newDescript = " ";
+            if(place.getDescrizione().length()>30){
+                newDescript= place.getDescrizione().substring(0,30)+"...";
+                description.setText(newDescript);
+            }
+            else{
+                description.setText(place.getDescrizione());
+            }
 
             updateVisitedIcon(place.getVisitati(), holder.itemView.getContext());
             visitedButton.setOnClickListener(v->{

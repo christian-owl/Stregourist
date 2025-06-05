@@ -10,7 +10,7 @@
     <item
         android:id="@+id/nav_fav"
         android:icon="@drawable/ic_favorite"
-        android:title="Favourites"
+        android:title="Preferiti"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_ar"

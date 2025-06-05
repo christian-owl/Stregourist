@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
@@ -122,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
         //NOTIFICHE
         NotificationManagerHelper.createNotificationChannel(this);
         scheduleDailyTips();
-        scheduleProximityWorker();
+        //scheduleProximityWorker();
+        testProximityWorkerNow();
     }
     private void requestAllPermissionsIfNecessary() {
         if (!PermissionUtils.hasPermissions(this)) {
@@ -182,5 +184,11 @@ public class MainActivity extends AppCompatActivity {
                 ExistingPeriodicWorkPolicy.KEEP,
                 request
         );
+    }
+    private void testProximityWorkerNow() {
+        OneTimeWorkRequest testRequest =
+                new OneTimeWorkRequest.Builder(ProximityAlertWorker.class).build();
+
+        WorkManager.getInstance(this).enqueue(testRequest);
     }
 }

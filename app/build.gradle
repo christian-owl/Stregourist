@@ -50,8 +50,8 @@ dependencies {
     // Maps & Location
     implementation 'com.google.android.gms:play-services-maps:19.2.0'
     implementation 'com.google.android.gms:play-services-location:21.3.0'
-    // ARCore
-    implementation 'com.google.ar:core:1.43.0'
+    // ARCore: mantieni questa versione, la superiore non è compatibile con sceneform
+    implementation 'com.google.ar:core:1.41.0'
     // Sceneform
     implementation 'com.github.SceneView:sceneform-android:1.22.0'
     // UI
