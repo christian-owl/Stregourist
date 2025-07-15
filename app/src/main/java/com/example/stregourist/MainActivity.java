@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
         //NOTIFICHE
         NotificationManagerHelper.createNotificationChannel(this);
         scheduleDailyTips();
-        //scheduleProximityWorker();
-        testProximityWorkerNow();
+        scheduleProximityWorker();
+        //testProximityWorkerNow();
     }
     private void requestAllPermissionsIfNecessary() {
         if (!PermissionUtils.hasPermissions(this)) {
