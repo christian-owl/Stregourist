@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 def secretsFile = rootProject.file("secrets.properties")
 def secrets = new Properties()
@@ -60,11 +61,11 @@ dependencies {
     implementation "androidx.camera:camera-view:$camerax_version"
     // Lifecycle
     def lifecycle_version = "2.6.2"
-
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
-
+    //ML Kit
+    implementation 'com.google.mlkit:image-labeling-custom:17.0.0'
     // UI
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
@@ -76,6 +77,11 @@ dependencies {
     implementation 'androidx.fragment:fragment:1.8.6'
     // JSON
     implementation 'com.google.code.gson:gson:2.10.1'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //Firebase
+    implementation 'com.google.firebase:firebase-messaging:23.4.1'
     // Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'

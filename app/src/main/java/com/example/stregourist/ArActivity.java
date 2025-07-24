@@ -20,10 +20,12 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.mlkit.common.model.LocalModel;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.label.ImageLabel;
 import com.google.mlkit.vision.label.ImageLabeler;
 import com.google.mlkit.vision.label.ImageLabeling;
+import com.google.mlkit.vision.label.custom.CustomImageLabelerOptions;
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 
 import java.util.List;
@@ -107,7 +109,19 @@ public class ArActivity extends AppCompatActivity {
             int rotationDegrees = imageProxy.getImageInfo().getRotationDegrees();
             InputImage image = InputImage.fromMediaImage(mediaImage, rotationDegrees);
 
-            ImageLabeler labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS);
+            //modello personalizzato di ml
+            LocalModel localModel = new LocalModel.Builder()
+                    .setAssetFilePath("model.tflite")
+                    .build();
+
+            CustomImageLabelerOptions customImageLabelerOptions =
+                    new CustomImageLabelerOptions.Builder(localModel)
+                            .setConfidenceThreshold(0.6f)
+                            .setMaxResultCount(1)
+                            .build();
+
+            ImageLabeler labeler = ImageLabeling.getClient(customImageLabelerOptions);
+
 
             labeler.process(image)
                     .addOnSuccessListener(labels -> {

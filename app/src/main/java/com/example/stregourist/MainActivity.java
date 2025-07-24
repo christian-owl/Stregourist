@@ -1,5 +1,7 @@
 package com.example.stregourist;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -17,10 +19,13 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ClipData.Item;
 import android.content.Intent;
 import android.media.RouteListingPreference;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -35,11 +40,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -125,6 +136,43 @@ public class MainActivity extends AppCompatActivity {
         scheduleDailyTips();
         scheduleProximityWorker();
         //testProximityWorkerNow();
+
+        FirebaseApp.initializeApp(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    "channel_events",
+                    "Eventi",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            if (manager != null) {
+                manager.createNotificationChannel(channel);
+                Log.w("FCM_CHANNEL", "canale creato");
+            }
+        }
+        FirebaseMessaging.getInstance().subscribeToTopic("eventi")
+                .addOnCompleteListener(task -> {
+                    String msg = task.isSuccessful() ? "Iscrizione al topic riuscita" : "Iscrizione fallita";
+                    Log.d("FCM_TOPIC", msg);
+                });
+        /* Questo costrutto richiede al beckend di inviare una notifica all'app
+        ApiService apiService = ApiClient.getApiService();
+        apiService.notificaEvento(3).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Log.d("NOTIFICA", "Notifica richiesta al server con successo");
+                } else {
+                    Log.e("NOTIFICA", "Errore: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.e("NOTIFICA", "Errore di rete: " + t.getMessage());
+            }
+        });
+         */
     }
     private void requestAllPermissionsIfNecessary() {
         if (!PermissionUtils.hasPermissions(this)) {

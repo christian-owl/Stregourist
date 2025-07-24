@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- PROGRESS -->
         <TextView
             android:id="@+id/progress_text"
             android:layout_width="wrap_content"
@@ -18,39 +19,40 @@
             android:text="Visitati: 0 su 0"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progress_bar"
             android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_height="12dp"
+            android:layout_marginBottom="24dp"
             app:trackThickness="8dp"
-            app:trackCornerRadius="4dp"
+            app:trackCornerRadius="6dp"
             app:indicatorColor="@color/light_green"
             app:trackColor="@color/light_gray"
             style="@style/Widget.Material3.LinearProgressIndicator"
             android:progress="0"
             android:max="100" />
 
+        <!-- SEZIONE NON VISITATI -->
         <TextView
             android:id="@+id/std_fr_home"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Non hai ancora visitato:"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/empty_home_unvisit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hai visto tutto di Benevento!"
             android:visibility="gone"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="@color/light_green"
             android:layout_marginBottom="8dp" />
 
@@ -60,29 +62,28 @@
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:scrollbars="horizontal"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:visibility="visible" />
+            android:scrollbars="none"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="16dp" />
 
+        <!-- SEZIONE VISITATI -->
         <TextView
             android:id="@+id/std_fr_home_2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hai già visitato:"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/empty_home_visit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Non hai ancora visitato nulla"
             android:visibility="gone"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="@color/red"
             android:layout_marginBottom="8dp" />
 
@@ -92,9 +93,7 @@
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:scrollbars="horizontal"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:visibility="gone" />
+            android:scrollbars="none"
+            android:paddingBottom="8dp" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

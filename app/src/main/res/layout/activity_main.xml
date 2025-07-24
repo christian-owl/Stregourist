@@ -26,7 +26,8 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_notification_32"
             android:contentDescription="notifiche"
-            android:scaleType="fitCenter" />
+            android:scaleType="centerInside"
+            android:padding="8dp"/>
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,7 +39,7 @@
         android:visibility="gone"/> <!-- nasconde la RecyclerView all'avvio -->
 
     <FrameLayout
-        android:background="#abdbe3"
+        android:background="@drawable/gradient_background"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
