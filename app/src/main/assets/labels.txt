@@ -1,0 +1,6 @@
+0 Duomo
+1 Arco di Traiano
+2 Basilica Madonna delle Grazie
+3 Bue Apis
+4 Rocca dei Rettori
+5 Teatro Romano

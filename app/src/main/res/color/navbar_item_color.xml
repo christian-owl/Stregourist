@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Stato selezionato -->
+    <item
+        android:state_checked="true"
+        android:color="#FF6200EE" /> <!-- viola acceso -->
+    <!-- Stato inattivo -->
+    <item
+        android:color="#FF888888" /> <!-- grigio medio -->
+</selector>

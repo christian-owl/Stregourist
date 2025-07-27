@@ -12,15 +12,26 @@
         android:orientation="vertical">
 
         <!-- PROGRESS -->
-        <TextView
-            android:id="@+id/progress_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Visitati: 0 su 0"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border_text"
+        android:padding="10dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginHorizontal="4dp"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:backgroundTint="@android:color/white">
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visitati: 0 su 0"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+    </LinearLayout>
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progress_bar"
@@ -36,16 +47,26 @@
             android:max="100" />
 
         <!-- SEZIONE NON VISITATI -->
-        <TextView
-            android:id="@+id/std_fr_home"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Non hai ancora visitato:"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp" />
-
+            android:background="@drawable/round_border_text"
+            android:padding="10dp"
+            android:layout_marginBottom="13dp"
+            android:layout_marginHorizontal="4dp"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:backgroundTint="@android:color/white">
+            <TextView
+                android:id="@+id/std_fr_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non hai ancora visitato:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+    </LinearLayout>
         <TextView
             android:id="@+id/empty_home_unvisit"
             android:layout_width="match_parent"
@@ -67,16 +88,26 @@
             android:layout_marginBottom="16dp" />
 
         <!-- SEZIONE VISITATI -->
-        <TextView
-            android:id="@+id/std_fr_home_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hai già visitato:"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border_text"
+        android:padding="10dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginHorizontal="4dp"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:backgroundTint="@android:color/white">
+            <TextView
+                android:id="@+id/std_fr_home_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hai già visitato:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+    </LinearLayout>
         <TextView
             android:id="@+id/empty_home_visit"
             android:layout_width="match_parent"

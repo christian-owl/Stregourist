@@ -36,15 +36,17 @@
             android:text="Description here..."
             android:textSize="14sp" />
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/visited_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_not_visited"
-        android:tint="@color/black"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/round_button"
         android:contentDescription="Visited Button"
-        android:background="@drawable/round_button"/>
+        android:padding="6dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_not_visited"
+        android:tint="@color/black" />
 </androidx.cardview.widget.CardView>

@@ -54,10 +54,12 @@
 
         <ImageButton
             android:id="@+id/favorite_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="8dp"
             android:src="@drawable/ic_favorite_64"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/notif_bg"
+            android:scaleType="centerInside"
             android:contentDescription="Aggiungi ai preferiti" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

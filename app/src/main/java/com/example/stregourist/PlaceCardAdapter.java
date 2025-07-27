@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,12 +55,14 @@ public class PlaceCardAdapter  extends RecyclerView.Adapter<PlaceCardAdapter.Pla
         private final TextView name;
         private final TextView description;
         private final AppCompatImageButton visitedButton;
+        private final ImageView image;
 
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.place_card_name);
             description = itemView.findViewById(R.id.place_card_description);
             visitedButton = itemView.findViewById(R.id.visited_button);
+            image = itemView.findViewById(R.id.place_card_img);
         }
         public void bind(Place place, PlaceViewHolder holder){
             name.setText(place.getNome());
@@ -70,6 +73,17 @@ public class PlaceCardAdapter  extends RecyclerView.Adapter<PlaceCardAdapter.Pla
             }
             else{
                 description.setText(place.getDescrizione());
+            }
+
+            Context context = itemView.getContext();
+            int resId = context.getResources().getIdentifier(
+                    place.getBigImg(), "drawable", context.getPackageName());
+
+            if (resId != 0) {
+                image.setImageResource(resId);
+            } else {
+                // fallback nel caso non trovasse l'immagine
+                image.setImageResource(R.drawable.ic_not_visited);
             }
 
             updateVisitedIcon(place.getVisitati(), holder.itemView.getContext());
@@ -85,7 +99,6 @@ public class PlaceCardAdapter  extends RecyclerView.Adapter<PlaceCardAdapter.Pla
             });
 
             holder.itemView.setOnClickListener(v ->{
-                Context context = v.getContext();
                 Intent intent = new Intent(context, PlaceDetailsActivity.class);
                 intent.putExtra("name", place.getNome());
                 intent.putExtra("description", place.getDescrizione());

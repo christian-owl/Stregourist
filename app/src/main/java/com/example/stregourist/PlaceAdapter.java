@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -56,17 +57,30 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         private final TextView placeName;
         private final TextView placeDescript;
         private final AppCompatImageButton favButton;
+        private final ImageView image;
 
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
             placeName = itemView.findViewById(R.id.place_name);
             placeDescript = itemView.findViewById(R.id.place_description);
             favButton = itemView.findViewById(R.id.favorite_button);
+            image = itemView.findViewById(R.id.place_image);
         }
 
         public void bind(Place place, PlaceAdapter.PlaceViewHolder holder) {
             placeName.setText(place.getNome());
             placeDescript.setText(place.getDescrizione());
+
+            Context context = itemView.getContext();
+            int resId = context.getResources().getIdentifier(
+                    place.getSmallImg(), "drawable", context.getPackageName());
+
+            if (resId != 0) {
+                image.setImageResource(resId);
+            } else {
+                // fallback nel caso non trovasse l'immagine
+                image.setImageResource(R.drawable.ic_not_visited);
+            }
 
             updateFavoriteIcon(place.getPreferiti());
             favButton.setOnClickListener(v->{
@@ -81,7 +95,6 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
                 });
             });
             holder.itemView.setOnClickListener(v ->{
-                Context context = v.getContext();
                 Intent intent = new Intent(context, PlaceDetailsActivity.class);
                 intent.putExtra("name", place.getNome());
                 intent.putExtra("description", place.getDescrizione());

@@ -141,17 +141,19 @@ public class ArActivity extends AppCompatActivity {
     }
 
     private void handleLabels(List<ImageLabel> labels) {
-        for (ImageLabel label : labels) {
-            String text = label.getText();
-            float confidence = label.getConfidence();
-            Log.d("MLKit", "Detected: " + text + " (" + confidence + ")");
+        if (labels == null || labels.isEmpty()) return;
 
-            if (confidence > 0.75f) { // Puoi regolare la soglia
-                runOnUiThread(() -> onMonumentRecognized(text));
-                break;
-            }
+        ImageLabel bestLabel = labels.get(0); //serve ad estrarre la più probabile
+        String text = bestLabel.getText();
+        float confidence = bestLabel.getConfidence();
+
+        Log.d("MLKit", "Riconosciuto: " + text + " (" + confidence + ")");
+
+        if (confidence > 0.7f) {
+            runOnUiThread(() -> onMonumentRecognized(text));
         }
     }
+
 
     private void onMonumentRecognized(String label) {
         Toast.makeText(this, "Riconosciuto: " + label, Toast.LENGTH_SHORT).show();
@@ -163,8 +165,8 @@ public class ArActivity extends AppCompatActivity {
                 if (place.getNome().equalsIgnoreCase(label)) {
 
                     Intent intent = new Intent(this, PlaceDetailsActivity.class);
-                    intent.putExtra("id", place.getId());
-                    intent.putExtra("nome", place.getNome());
+                    intent.putExtra("name", place.getNome());
+                    intent.putExtra("description", place.getDescrizione());
                     startActivity(intent);
 
                     viewModel.getAllPlaces().removeObservers(this);

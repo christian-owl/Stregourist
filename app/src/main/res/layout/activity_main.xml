@@ -10,24 +10,33 @@
     <FrameLayout
         android:id="@+id/search_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
+
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:queryHint="Cerca un luogo o un monumento..." />
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/search_view_bg"
+            android:iconifiedByDefault="false"
+            android:layout_gravity="center_vertical"
+            android:queryHint="Cerca un luogo o un monumento..."
+            android:elevation="4dp"
+            android:layout_marginEnd="56dp"
+            android:minHeight="56dp"/>
 
         <ImageButton
             android:id="@+id/notification_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="end|center_vertical"
             android:layout_marginEnd="8dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_notification_32"
-            android:contentDescription="notifiche"
+            android:background="@drawable/notif_bg"
+            android:src="@drawable/ic_notification_64"
+            android:contentDescription="Notifiche"
             android:scaleType="centerInside"
-            android:padding="8dp"/>
+            android:padding="6dp"
+            android:elevation="4dp"/>
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -50,10 +59,15 @@
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
         app:menu="@menu/navbar_menu"
-        app:itemIconSize="40dp"
-        app:itemIconTint="@android:color/holo_red_light"
-        app:itemTextColor="@android:color/holo_red_dark"
-        android:background="?android:attr/windowBackground"/>
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@color/navbar_item_color"
+        app:itemIconTint="@color/navbar_item_color"
+        app:elevation="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="6dp" />
 
 </LinearLayout>

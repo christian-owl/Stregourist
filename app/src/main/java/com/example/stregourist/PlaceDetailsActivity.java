@@ -6,6 +6,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class PlaceDetailsActivity extends AppCompatActivity implements OnMapRead
     private GoogleMap map;
     private boolean mapReady = false;
     private boolean placeReady = false;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -44,6 +46,7 @@ public class PlaceDetailsActivity extends AppCompatActivity implements OnMapRead
         distanceView = findViewById(R.id.place_details_distance);
         favButton = findViewById(R.id.fav_button_details);
         visitButton = findViewById(R.id.visit_button_details);
+        image = findViewById(R.id.place_details_image);
 
         //per evitare che l'utente clicchi i pulsanti prima che il db sia pronto
         //vengono riabilitati in runOnUi
@@ -85,6 +88,17 @@ public class PlaceDetailsActivity extends AppCompatActivity implements OnMapRead
                     updateFavoriteIcon(place.getPreferiti(), this);
                     updateVisitedIcon(place.getVisitati(), this);
 
+                    Context context = getApplicationContext();
+                    int resId = context.getResources().getIdentifier(
+                            place.getBigImg(), "drawable", context.getPackageName());
+
+                    if (resId != 0) {
+                        image.setImageResource(resId);
+                    } else {
+                        // fallback nel caso non trovasse l'immagine
+                        image.setImageResource(R.drawable.ic_not_visited);
+                    }
+
                     favButton.setOnClickListener(view -> {
                         int nuovoStato = (place.getPreferiti() == 1) ? 0 : 1;
                         place.setPreferiti(nuovoStato);
@@ -108,7 +122,6 @@ public class PlaceDetailsActivity extends AppCompatActivity implements OnMapRead
                 Log.e("PlaceDetails", "Errore DB: " + e.getMessage());
             }
         });
-
         homeButton = findViewById(R.id.home_button_details);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +129,6 @@ public class PlaceDetailsActivity extends AppCompatActivity implements OnMapRead
                 finish(); //chiude l'activity corrente
             }
         });
-
     }
 
     public void updateVisitedIcon(int stato, Context context){

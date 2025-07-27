@@ -7,8 +7,8 @@
         "visitati": 0,
         "latitudine": 41.131640519077756,
         "longitudine": 14.774383782835937,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_duomo",
+        "bigImg": "main_duomo"
     },
     {
         "id": 2,
@@ -18,8 +18,8 @@
         "visitati": 0,
         "latitudine": 41.13254295530281,
         "longitudine": 14.779123382416302,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_arco",
+        "bigImg": "main_arco"
     },
     {
         "id": 3,
@@ -29,8 +29,8 @@
         "visitati": 0,
         "latitudine": 41.130605542386604,
         "longitudine": 14.781217576438577,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_chiesa_ss",
+        "bigImg": "main_chiesa_ss"
     },
     {
         "id": 4,
@@ -40,8 +40,8 @@
         "visitati": 0,
         "latitudine": 41.13040405465745,
         "longitudine": 14.771618937069881,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_teatro_r",
+        "bigImg": "main_teatro_r"
     },
     {
         "id": 5,
@@ -51,8 +51,8 @@
         "visitati": 0,
         "latitudine": 41.12973170384612,
         "longitudine": 14.779664842222854,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_hortus",
+        "bigImg": "main_hortus"
     },
     {
         "id": 6,
@@ -62,8 +62,8 @@
         "visitati": 0,
         "latitudine": 41.12777733217614,
         "longitudine": 14.783871579563964,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_villa",
+        "bigImg": "main_villa"
     },
     {
         "id": 7,
@@ -73,8 +73,8 @@
         "visitati": 0,
         "latitudine": 41.131399165594054,
         "longitudine": 14.776765847773996,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_janua",
+        "bigImg": "main_janua"
     },
     {
         "id": 8,
@@ -84,8 +84,8 @@
         "visitati": 0,
         "latitudine": 41.14126755599783,
         "longitudine": 14.76947387401378,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_store",
+        "bigImg": "main_store"
     },
     {
         "id": 9,
@@ -95,8 +95,8 @@
         "visitati": 0,
         "latitudine": 41.134853561752195,
         "longitudine": 14.767520743881954,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_basilica",
+        "bigImg": "main_basilica"
     },
     {
         "id": 10,
@@ -106,8 +106,8 @@
         "visitati": 0,
         "latitudine": 41.131535716852234,
         "longitudine": 14.765482789934158,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_ponte",
+        "bigImg": "main_ponte"
     },
     {
         "id": 11,
@@ -117,8 +117,8 @@
         "visitati": 0,
         "latitudine": 41.12901464082885,
         "longitudine": 14.782218278267777,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_rocca",
+        "bigImg": "main_rocca"
     },
     {
         "id": 12,
@@ -128,8 +128,8 @@
         "visitati": 0,
         "latitudine": 41.1290207272297,
         "longitudine": 14.782237383510246,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_arco_sacr",
+        "bigImg": "main_arco_sacr"
     },
     {
         "id": 13,
@@ -139,8 +139,8 @@
         "visitati": 0,
         "latitudine": 41.13371605357278,
         "longitudine": 14.770192644457385,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_bue",
+        "bigImg": "main_bue"
     },
     {
         "id": 14,
@@ -150,8 +150,8 @@
         "visitati": 0,
         "latitudine": 41.13158944648485,
         "longitudine": 14.777151726194413,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_obelisco",
+        "bigImg": "main_obelisco"
     },
     {
         "id": 15,
@@ -161,8 +161,8 @@
         "visitati": 0,
         "latitudine": 41.13125085637503,
         "longitudine": 14.768460879584243,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_porta",
+        "bigImg": "main_porta"
     },
     {
         "id": 16,
@@ -172,8 +172,8 @@
         "visitati": 0,
         "latitudine": 41.13109348184389,
         "longitudine": 14.774934464763195,
-        "smallImg": "",
-        "bigImg": ""
+        "smallImg": "main_fontana",
+        "bigImg": "main_fontana"
     },
     {
         "id": 17,
@@ -185,5 +185,38 @@
         "longitudine": 14.754840,
         "smallImg": "",
         "bigImg": ""
+    },
+    {
+        "id": 18,
+        "nome": "Piazza Roma",
+        "descrizione": "Piazza Roma è una piazza situata nel centro storico di Benevento, attraversata dal Corso Dante e dal Corso Garibaldi. È un punto focale per la vita sociale della città, e su di essa si affacciano anche altre piazze come Piazza Duomo e Piazza Orsini.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13067,
+        "longitudine": 14.777747,
+        "smallImg": "main_p_roma",
+        "bigImg": "main_p_roma"
+    },
+    {
+        "id": 19,
+        "nome": "Palazzo del Governo",
+        "descrizione": "Il palazzo del Governo di Benevento è la sede cittadina della prefettura e del museo Arcos. Si trova all'estremità orientale di corso Garibaldi, accanto alla rocca dei Rettori, sede della provincia di Benevento.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.129734,
+        "longitudine": 14.781606,
+        "smallImg": "main_pal_gov",
+        "bigImg": "main_pal_gov"
+    },
+    {
+        "id": 20,
+        "nome": "Piazza Orsini",
+        "descrizione": "La piazza fu edificata all’inizio del 1700, mentre il monumento a Vincenzo Maria Orsini, cioè Papa Benedetto XIII oggi in fase di beatificazione, fu eretto nel 1778.",
+        "preferiti": 0,
+        "visitati": 0,
+        "latitudine": 41.13109348184389,
+        "longitudine": 14.774934464763195,
+        "smallImg": "main_p_orsini",
+        "bigImg": "main_p_orsini"
     }
 ]

@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 //Database Singleton di room
-@androidx.room.Database(entities = {Place.class, PlaceFts.class}, version = 7, exportSchema = false)
+@androidx.room.Database(entities = {Place.class, PlaceFts.class}, version = 8, exportSchema = false)
 public abstract class StrgDatabase extends RoomDatabase {
     public abstract PlaceDAO placeDAO();
     public static Context appContext;
