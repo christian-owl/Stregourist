@@ -23,6 +23,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ClipData.Item;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.media.RouteListingPreference;
 import android.net.Uri;
 import android.os.Build;

@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
 }
-def secretsFile = rootProject.file("secrets.properties")
+def secretsFile = rootProject.file("secret.properties")
 def secrets = new Properties()
 if (secretsFile.exists()) {
     secrets.load(new FileInputStream(secretsFile))

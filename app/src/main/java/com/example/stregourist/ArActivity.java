@@ -113,6 +113,7 @@ public class ArActivity extends AppCompatActivity {
             LocalModel localModel = new LocalModel.Builder()
                     .setAssetFilePath("model.tflite")
                     .build();
+            Log.d("MLKit", "Modello TFLite caricato");
 
             CustomImageLabelerOptions customImageLabelerOptions =
                     new CustomImageLabelerOptions.Builder(localModel)

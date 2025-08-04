@@ -5,70 +5,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F5F5F5"
     android:padding="16dp">
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="12dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="6dp">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp">
 
-            <ImageView
-                android:id="@+id/place_details_image"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="220dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
 
-        <TextView
-            android:id="@+id/place_details_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nome"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#222"
-            android:paddingBottom="6dp" />
+                <ImageView
+                    android:id="@+id/place_details_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/place_details_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Descrizione"
-            android:textSize="16sp"
-            android:textColor="#444"
-            android:lineSpacingExtra="4dp"
-            android:paddingBottom="10dp" />
-
-        <TextView
-            android:id="@+id/place_details_distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distanza"
-            android:textSize="14sp"
-            android:textColor="#666"
-            android:paddingBottom="14dp" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/map_fragment"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
+            <TextView
+                android:id="@+id/place_details_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#222"
+                android:paddingBottom="6dp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/place_details_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrizione"
+                android:textSize="16sp"
+                android:textColor="#444"
+                android:lineSpacingExtra="4dp"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/place_details_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distanza"
+                android:textSize="14sp"
+                android:textColor="#666"
+                android:paddingBottom="14dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map_fragment"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/home_button_details"
