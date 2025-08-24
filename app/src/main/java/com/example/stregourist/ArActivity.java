@@ -43,7 +43,6 @@ public class ArActivity extends AppCompatActivity {
     private ExecutorService cameraExecutor;
     private volatile boolean shouldAnalyzeFrames = false;
 
-    // ML Kit components caricati una sola volta
     private ImageLabeler labeler;
 
     @Override
@@ -54,7 +53,6 @@ public class ArActivity extends AppCompatActivity {
         previewView = findViewById(R.id.previewView);
         cameraExecutor = Executors.newSingleThreadExecutor();
 
-        // Bottone per attivare l'analisi
         Button analyzeButton = findViewById(R.id.btnAnalyze);
         analyzeButton.setOnClickListener(v -> {
             shouldAnalyzeFrames = true;
@@ -62,7 +60,7 @@ public class ArActivity extends AppCompatActivity {
         });
 
         if (allPermissionsGranted()) {
-            initModel();  // Carico il modello una sola volta
+            initModel();
             startCamera();
         } else {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
@@ -70,7 +68,6 @@ public class ArActivity extends AppCompatActivity {
     }
 
     private void initModel() {
-        // Carico il modello TFLite solo una volta
         LocalModel localModel = new LocalModel.Builder()
                 .setAssetFilePath("model.tflite")
                 .build();
@@ -148,7 +145,6 @@ public class ArActivity extends AppCompatActivity {
 
         if (confidence > 0.5f) { // unica soglia
             runOnUiThread(() -> onMonumentRecognized(text));
-            // Se vuoi fermare l'analisi dopo il primo riconoscimento:
             shouldAnalyzeFrames = false;
         }
     }
