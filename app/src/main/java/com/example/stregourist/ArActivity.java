@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Size;
 import android.view.MotionEvent;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,8 +41,10 @@ public class ArActivity extends AppCompatActivity {
 
     private PreviewView previewView;
     private ExecutorService cameraExecutor;
-    private boolean isProcessingFrame = false;
-    private volatile boolean requestImageProcessing = false;
+    private volatile boolean shouldAnalyzeFrames = false;
+
+    // ML Kit components caricati una sola volta
+    private ImageLabeler labeler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,19 +54,33 @@ public class ArActivity extends AppCompatActivity {
         previewView = findViewById(R.id.previewView);
         cameraExecutor = Executors.newSingleThreadExecutor();
 
+        // Bottone per attivare l'analisi
+        Button analyzeButton = findViewById(R.id.btnAnalyze);
+        analyzeButton.setOnClickListener(v -> {
+            shouldAnalyzeFrames = true;
+            Toast.makeText(this, "Analisi avviata", Toast.LENGTH_SHORT).show();
+        });
+
         if (allPermissionsGranted()) {
+            initModel();  // Carico il modello una sola volta
             startCamera();
         } else {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
         }
+    }
 
-        previewView.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                requestImageProcessing = true;
-            }
-            return false;
-        });
-
+    private void initModel() {
+        // Carico il modello TFLite solo una volta
+        LocalModel localModel = new LocalModel.Builder()
+                .setAssetFilePath("model.tflite")
+                .build();
+        CustomImageLabelerOptions options =
+                new CustomImageLabelerOptions.Builder(localModel)
+                        .setConfidenceThreshold(0.5f) // soglia ridotta a 0.5
+                        .setMaxResultCount(1)
+                        .build();
+        labeler = ImageLabeling.getClient(options);
+        Log.d("MLKit", "Modello TFLite caricato");
     }
 
     private void startCamera() {
@@ -82,8 +99,7 @@ public class ArActivity extends AppCompatActivity {
                         .build();
 
                 imageAnalysis.setAnalyzer(cameraExecutor, imageProxy -> {
-                    if (requestImageProcessing) {
-                        requestImageProcessing = false;
+                    if (shouldAnalyzeFrames) {
                         processImageProxy(imageProxy);
                     } else {
                         imageProxy.close();
@@ -91,7 +107,6 @@ public class ArActivity extends AppCompatActivity {
                 });
 
                 CameraSelector cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA;
-
                 cameraProvider.unbindAll();
                 cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalysis);
 
@@ -104,72 +119,51 @@ public class ArActivity extends AppCompatActivity {
     private void processImageProxy(ImageProxy imageProxy) {
         @SuppressWarnings("UnsafeOptInUsageError")
         Image mediaImage = imageProxy.getImage();
-
         if (mediaImage != null) {
             int rotationDegrees = imageProxy.getImageInfo().getRotationDegrees();
             InputImage image = InputImage.fromMediaImage(mediaImage, rotationDegrees);
-
-            //modello personalizzato di ml
-            LocalModel localModel = new LocalModel.Builder()
-                    .setAssetFilePath("model.tflite")
-                    .build();
-            Log.d("MLKit", "Modello TFLite caricato");
-
-            CustomImageLabelerOptions customImageLabelerOptions =
-                    new CustomImageLabelerOptions.Builder(localModel)
-                            .setConfidenceThreshold(0.6f)
-                            .setMaxResultCount(1)
-                            .build();
-
-            ImageLabeler labeler = ImageLabeling.getClient(customImageLabelerOptions);
-
 
             labeler.process(image)
                     .addOnSuccessListener(labels -> {
                         handleLabels(labels);
                         imageProxy.close();
-                        isProcessingFrame = false;
                     })
                     .addOnFailureListener(e -> {
                         e.printStackTrace();
                         imageProxy.close();
-                        isProcessingFrame = false;
                     });
         } else {
             imageProxy.close();
-            isProcessingFrame = false;
         }
     }
 
     private void handleLabels(List<ImageLabel> labels) {
         if (labels == null || labels.isEmpty()) return;
 
-        ImageLabel bestLabel = labels.get(0); //serve ad estrarre la più probabile
+        ImageLabel bestLabel = labels.get(0);
         String text = bestLabel.getText();
         float confidence = bestLabel.getConfidence();
 
         Log.d("MLKit", "Riconosciuto: " + text + " (" + confidence + ")");
 
-        if (confidence > 0.7f) {
+        if (confidence > 0.5f) { // unica soglia
             runOnUiThread(() -> onMonumentRecognized(text));
+            // Se vuoi fermare l'analisi dopo il primo riconoscimento:
+            shouldAnalyzeFrames = false;
         }
     }
-
 
     private void onMonumentRecognized(String label) {
         Toast.makeText(this, "Riconosciuto: " + label, Toast.LENGTH_SHORT).show();
 
         PlaceViewModel viewModel = new ViewModelProvider(this).get(PlaceViewModel.class);
-
         viewModel.getAllPlaces().observe(this, places -> {
             for (Place place : places) {
                 if (place.getNome().equalsIgnoreCase(label)) {
-
                     Intent intent = new Intent(this, PlaceDetailsActivity.class);
                     intent.putExtra("name", place.getNome());
                     intent.putExtra("description", place.getDescrizione());
                     startActivity(intent);
-
                     viewModel.getAllPlaces().removeObservers(this);
                     break;
                 }
@@ -191,6 +185,7 @@ public class ArActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             if (allPermissionsGranted()) {
+                initModel();
                 startCamera();
             } else {
                 Toast.makeText(this, "Permessi non concessi", Toast.LENGTH_SHORT).show();
