@@ -2,7 +2,7 @@ Stregourist
 
 Stregourist è un'app Android dedicata al turismo, progettata specificamente per la città di Benevento. L'obiettivo dell'app è offrire ai visitatori e ai cittadini un'esperienza completa, intuitiva e interattiva per scoprire luoghi, monumenti ed eventi della città.
 
-🚀 Funzionalità principali
+Funzionalità principali:
 
 Homepage con card informative
 La schermata principale presenta una serie di card che offrono una panoramica chiara sui principali luoghi e monumenti di Benevento.
@@ -25,7 +25,7 @@ Funzione di ricerca dinamica che consente di trovare rapidamente luoghi e monume
 AR
 Possibilità di individuare un luogo inquadrandolo con la fotocamera.
 
-🛠️ Tecnologie utilizzate
+Tecnologie utilizzate:
 
 Android (Java)
 
@@ -37,11 +37,11 @@ Firebase Cloud Messaging
 
 ML Kit di Google
 
-🎯 Obiettivo del progetto
+Obiettivo del progetto:
 
 Stregourist nasce con l'intento di valorizzare il patrimonio culturale e turistico di Benevento, offrendo uno strumento moderno e accessibile che unisce informazione, geolocalizzazione e interazione in tempo reale.
 
-Screenshots
+Screenshots:
 
 https://github.com/user-attachments/assets/6282f5e6-0964-4766-bb1d-4106d4356832 
 <p float="left">
