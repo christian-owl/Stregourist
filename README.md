@@ -41,3 +41,11 @@ ML Kit di Google
 
 Stregourist nasce con l'intento di valorizzare il patrimonio culturale e turistico di Benevento, offrendo uno strumento moderno e accessibile che unisce informazione, geolocalizzazione e interazione in tempo reale.
 
+Screenshots
+
+https://github.com/user-attachments/assets/6282f5e6-0964-4766-bb1d-4106d4356832 
+![photo_2025-09-26_14-39-56](https://github.com/user-attachments/assets/e96a5ac4-5a9b-4768-86d5-68606989c193)
+![photo_2025-09-26_14-39-58](https://github.com/user-attachments/assets/d5169bc3-223f-4773-9d44-5f80ab114c55)
+![photo_2025-09-26_14-40-00](https://github.com/user-attachments/assets/ac300bef-e57a-4e30-aae6-4533f2f2eb21)
+![photo_2025-09-26_14-40-02](https://github.com/user-attachments/assets/b03ebd5d-10f8-49d3-931b-3005a285df03)
+
